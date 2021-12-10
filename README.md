@@ -15,5 +15,5 @@ Deep graph clustering, which aims to reveal the underlying graph structure and d
 
 
 
-<img src="./assets/overall.jpg" style="zoom:15%;" />
+<img src="./assets/overall.jpg" style="zoom:12%;" />
 
