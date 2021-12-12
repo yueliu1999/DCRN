@@ -153,7 +153,7 @@ class Readout(nn.Module):
         self.K = K
 
     def forward(self, Z):
-        # cluster-level embedding
+        # calculate cluster-level embedding
         Z_tilde = []
 
         # step1: split the nodes into K groups
@@ -166,6 +166,8 @@ class Readout(nn.Module):
                 break
             else:
                 Z_tilde.append(torch.mean(Z[i:i + step], dim=0))
+
+        # the cluster-level embedding
         Z_tilde = torch.cat(Z_tilde, dim=0)
         return Z_tilde.view(1, -1)
 

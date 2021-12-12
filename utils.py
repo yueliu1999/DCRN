@@ -43,7 +43,6 @@ def setup():
         print("error!")
         exit(0)
     opt.args.device = torch.device("cuda" if opt.args.cuda else "cpu")
-    opt.args.pre_model_path = 'model/model_pretrain/{}_pretrain.pkl'.format(opt.args.name)
     print("------------------------------")
     print("dataset       : {}".format(opt.args.name))
     print("device        : {}".format(opt.args.device))
@@ -236,7 +235,7 @@ def load_pretrain_parameter(model):
         model: Dual Correlation Reduction Network
     Returns: model
     """
-    pretrained_dict = torch.load(opt.args.pre_model_path, map_location='cpu')
+    pretrained_dict = torch.load('model/model_pretrain/{}_pretrain.pkl'.format(opt.args.name), map_location='cpu')
     model_dict = model.state_dict()
     pretrained_dict = {k: v for k, v in pretrained_dict.items() if k in model_dict}
     model_dict.update(pretrained_dict)
