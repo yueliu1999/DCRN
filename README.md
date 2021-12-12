@@ -6,7 +6,7 @@
     <a href="https://aaai.org/Conferences/AAAI-22/" alt="Conference">
         <img src="https://img.shields.io/badge/AAAI'22-brightgreen" /></a>
 </p>
-An official source code for paper \"**Deep Graph Clustering via Dual Correlation Reduction**\'', accepted by AAAI 2022. Any communications or issues are welcomed. Please contact yueliu19990731@163.com. If you find this repository useful to your research or work, it is really appreciate to star this repository. :heart:
+An official source code for paper **Deep Graph Clustering via Dual Correlation Reduction**, accepted by AAAI 2022. Any communications or issues are welcomed. Please contact yueliu19990731@163.com. If you find this repository useful to your research or work, it is really appreciate to star this repository. :heart:
 
 -------------
 
@@ -23,11 +23,6 @@ An official source code for paper \"**Deep Graph Clustering via Dual Correlation
     Illustration of the Dual Correlation Reduction Network (DCRN).
 </div>
 
-
-
-
-
-------
 
 ### requirements
 
