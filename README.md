@@ -45,8 +45,9 @@ Python package information is summarized in **requirements.txt**:
 
 ### Quick Start
 
-- step1:  download the dataset from [Awesome Deep Graph Clustering](https://github.com/yueliu1999/Awesome-Deep-Graph-Clustering) and unzip them into **./dataset**
-- step2:  run **python main.py --name dblp**. The name parameter is the name of dataset
+- step1: using **dblp.zip** or download other datasets from [Awesome Deep Graph Clustering](https://github.com/yueliu1999/Awesome-Deep-Graph-Clustering) 
+- step2: unzip the dataset into **./dataset**
+- step2: run **python main.py --name dblp**. The name parameter is the name of dataset
 
 
 
