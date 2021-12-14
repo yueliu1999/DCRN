@@ -9,7 +9,7 @@ if __name__ == '__main__':
     # data pre-precessing: X, y, A, A_norm, Ad
     X, y, A = load_graph_data(opt.args.name, show_details=False)
     A_norm = normalize_adj(A, self_loop=True, symmetry=False)
-    Ad = diffusion_adj(A, mode="ppr", transport_rate=0.2)
+    Ad = diffusion_adj(A, mode="ppr", transport_rate=opt.args.alpha_value)
 
     # to torch tensor
     X = numpy_to_torch(X).to(opt.args.device)

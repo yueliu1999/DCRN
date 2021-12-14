@@ -14,9 +14,14 @@ from sklearn.metrics.cluster import normalized_mutual_info_score as nmi_score
 def setup():
     """
     setup
+    - name: the name of dataset
+    - device: CPU / GPU
     - seed: random seed
     - n_clusters: num of cluster
-    - n_input: dimension of input feature matrix
+    - n_input: dimension of feature
+    - alpha_value: alpha value for graph diffusion
+    - lambda_value: lambda value for clustering guidance
+    - gamma_value: gamma value for propagation regularization
     - lr: learning rate
     Return: None
 
@@ -26,30 +31,48 @@ def setup():
     if opt.args.name == 'acm':
         opt.args.n_clusters = 3
         opt.args.n_input = 100
+        opt.args.alpha_value = 0.2
+        opt.args.lambda_value = 10
         opt.args.gamma_value = 1e3
         opt.args.lr = 5e-5
 
     elif opt.args.name == 'dblp':
         opt.args.n_clusters = 4
         opt.args.n_input = 50
+        opt.args.alpha_value = 0.2
+        opt.args.lambda_value = 10
         opt.args.gamma_value = 1e4
         opt.args.lr = 1e-4
+
     elif opt.args.name == 'cite':
         opt.args.n_clusters = 6
         opt.args.n_input = 100
+        opt.args.alpha_value = 0.2
+        opt.args.lambda_value = 10
         opt.args.gamma_value = 1e5
         opt.args.lr = 1e-5
+
+    elif opt.args.name == 'amap':
+        opt.args.n_clusters = 8
+        opt.args.n_input = 100
+        opt.args.alpha_value = 0.2
+        opt.args.lambda_value = 10
+        opt.args.gamma_value = 1e3
+        opt.args.lr = 1e-3
+
     else:
         print("error!")
         exit(0)
+
     opt.args.device = torch.device("cuda" if opt.args.cuda else "cpu")
     print("------------------------------")
     print("dataset       : {}".format(opt.args.name))
     print("device        : {}".format(opt.args.device))
     print("random seed   : {}".format(opt.args.seed))
     print("clusters      : {}".format(opt.args.n_clusters))
-    print("gamma value   : {:.0e}".format(opt.args.gamma_value))
+    print("alpha value   : {}".format(opt.args.alpha_value))
     print("lambda value  : {}".format(opt.args.lambda_value))
+    print("gamma value   : {:.0e}".format(opt.args.gamma_value))
     print("learning rate : {:.0e}".format(opt.args.lr))
     print("------------------------------")
 
@@ -235,7 +258,7 @@ def load_pretrain_parameter(model):
         model: Dual Correlation Reduction Network
     Returns: model
     """
-    pretrained_dict = torch.load('model_pretrain/{}_pretrain.pkl'.format(opt.args.name), map_location='cpu')
+    pretrained_dict = torch.load('model/model_pretrain/{}_pretrain.pkl'.format(opt.args.name), map_location='cpu')
     model_dict = model.state_dict()
     pretrained_dict = {k: v for k, v in pretrained_dict.items() if k in model_dict}
     model_dict.update(pretrained_dict)
@@ -386,6 +409,7 @@ def dicr_loss(Z_ae, Z_igae, AZ, Z):
     # cross-view feature correlation matrix
     S_F_ae = cross_correlation(Z_ae[2].t(), Z_ae[3].t())
     S_F_igae = cross_correlation(Z_igae[2].t(), Z_igae[3].t())
+
     # loss of FCR
     L_F_ae = correlation_reduction_loss(S_F_ae)
     L_F_igae = correlation_reduction_loss(S_F_igae)
@@ -394,7 +418,7 @@ def dicr_loss(Z_ae, Z_igae, AZ, Z):
         L_N = 0.01 * L_N_ae + 10 * L_N_igae
         L_F = 0.5 * L_F_ae + 0.5 * L_F_igae
 
-    elif opt.args.name == "cite":
+    elif opt.args.name == "cite" or opt.args.name == "amap":
         L_N = 0.1 * L_N_ae + 5 * L_N_igae
         L_F = L_F_ae + L_F_igae
 
