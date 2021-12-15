@@ -258,7 +258,7 @@ def load_pretrain_parameter(model):
         model: Dual Correlation Reduction Network
     Returns: model
     """
-    pretrained_dict = torch.load('model/model_pretrain/{}_pretrain.pkl'.format(opt.args.name), map_location='cpu')
+    pretrained_dict = torch.load('model_pretrain/{}_pretrain.pkl'.format(opt.args.name), map_location='cpu')
     model_dict = model.state_dict()
     pretrained_dict = {k: v for k, v in pretrained_dict.items() if k in model_dict}
     model_dict.update(pretrained_dict)
