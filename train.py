@@ -51,7 +51,5 @@ def train(model, X, y, A, A_norm, Ad):
             opt.args.nmi = nmi
             opt.args.ari = ari
             opt.args.f1 = f1
-            # save parameters of model
-            torch.save(model.state_dict(), 'model/model_final/{}_final.pkl'.format(opt.args.name))
 
     return opt.args.acc, opt.args.nmi, opt.args.ari, opt.args.f1
