@@ -41,7 +41,7 @@ def setup():
         opt.args.n_input = 50
         opt.args.alpha_value = 0.2
         opt.args.lambda_value = 10
-        opt.args.gamma_value = 1e4
+        opt.args.gamma_value = 1e3
         opt.args.lr = 1e-4
 
     elif opt.args.name == 'cite':
@@ -49,7 +49,7 @@ def setup():
         opt.args.n_input = 100
         opt.args.alpha_value = 0.2
         opt.args.lambda_value = 10
-        opt.args.gamma_value = 1e5
+        opt.args.gamma_value = 1e3
         opt.args.lr = 1e-5
 
     elif opt.args.name == 'amap':
@@ -428,7 +428,6 @@ def dicr_loss(Z_ae, Z_igae, AZ, Z):
     if opt.args.name == "dblp" or opt.args.name == "acm":
         L_N = 0.01 * L_N_ae + 10 * L_N_igae
         L_F = 0.5 * L_F_ae + 0.5 * L_F_igae
-
     else:
         L_N = 0.1 * L_N_ae + 5 * L_N_igae
         L_F = L_F_ae + L_F_igae

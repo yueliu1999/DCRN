@@ -3,12 +3,15 @@ import argparse
 parser = argparse.ArgumentParser(description='DCRN', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
 # setting
-parser.add_argument('--name', type=str, default="cite")
+parser.add_argument('--name', type=str, default="dblp")
 parser.add_argument('--cuda', type=bool, default=True)
 parser.add_argument('--seed', type=int, default=3)
+parser.add_argument('--alpha_value', type=float, default=0.2)
+parser.add_argument('--lambda_value', type=float, default=10)
+parser.add_argument('--gamma_value', type=float, default=1e3)
+parser.add_argument('--lr', type=float, default=1e-4)
 parser.add_argument('--n_z', type=int, default=20)
 parser.add_argument('--epoch', type=int, default=400)
-parser.add_argument('--shuffle', type=bool, default=True)
 parser.add_argument('--show_training_details', type=bool, default=False)
 
 
