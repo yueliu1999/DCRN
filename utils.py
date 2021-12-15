@@ -62,6 +62,17 @@ def setup():
 
     else:
         print("error!")
+        print("please add the new dataset's parameters")
+        print("------------------------------")
+        print("dataset       : ")
+        print("device        : ")
+        print("random seed   : ")
+        print("clusters      : ")
+        print("alpha value   : ")
+        print("lambda value  : ")
+        print("gamma value   : ")
+        print("learning rate : ")
+        print("------------------------------")
         exit(0)
 
     opt.args.device = torch.device("cuda" if opt.args.cuda else "cpu")
@@ -418,7 +429,7 @@ def dicr_loss(Z_ae, Z_igae, AZ, Z):
         L_N = 0.01 * L_N_ae + 10 * L_N_igae
         L_F = 0.5 * L_F_ae + 0.5 * L_F_igae
 
-    elif opt.args.name == "cite" or opt.args.name == "amap":
+    else:
         L_N = 0.1 * L_N_ae + 5 * L_N_igae
         L_F = L_F_ae + L_F_igae
 

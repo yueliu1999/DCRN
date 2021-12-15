@@ -72,7 +72,7 @@ class GNNLayer(Module):
         if opt.args.name == "dblp":
             self.act = nn.Tanh()
             self.weight = Parameter(torch.FloatTensor(out_features, in_features))
-        elif opt.args.name == "cite" or opt.args.name == "acm" or opt.args.name == "amap":
+        else:
             self.act = nn.Tanh()
             self.weight = Parameter(torch.FloatTensor(in_features, out_features))
         torch.nn.init.xavier_uniform_(self.weight)
@@ -81,12 +81,12 @@ class GNNLayer(Module):
         if active:
             if opt.args.name == "dblp":
                 support = self.act(F.linear(features, self.weight))
-            elif opt.args.name == "cite" or opt.args.name == "acm" or opt.args.name == "amap":
+            else:
                 support = self.act(torch.mm(features, self.weight))
         else:
             if opt.args.name == "dblp":
                 support = F.linear(features, self.weight)
-            elif opt.args.name == "cite" or opt.args.name == "acm" or opt.args.name == "amap":
+            else:
                 support = torch.mm(features, self.weight)
         output = torch.spmm(adj, support)
         az = torch.spmm(adj, output)
