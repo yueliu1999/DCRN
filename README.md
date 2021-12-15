@@ -57,8 +57,33 @@ Python package information is summarized in **requirements.txt**:
 ### Quick Start
 
 - step1: using **dblp.zip** or download other datasets from [Awesome Deep Graph Clustering](https://github.com/yueliu1999/Awesome-Deep-Graph-Clustering) 
+
 - step2: unzip the dataset into **./dataset**
-- step2: run **python main.py --name dblp**. The name parameter is the name of dataset
+
+- step3: run 
+
+  ```
+  python main.py --name dblp --seed 3 --alpha_value 0.2 --lambda_value 10 --gamma_value 1e3 --lr 1e-4
+  ```
+
+
+
+parameter setting
+
+- name: the name of dataset
+- seed: the random seed. 10 runs under different random seeds.
+- alpha_value: the teleport probability in graph diffusion
+  - PUBMED: 0.1
+  - DBLP, CITE, ACM, AMAP, CORAFULL: 0.2
+- lambda_value: the coefficient of clustering guidance loss.
+  - all datasets: 10
+- gamma_value: the coefficient of propagation regularization
+  - all datasets: 1e3
+- lr: learning rate
+  - DBLP 1e-4
+  - ACM: 5e-5
+  - AMAP: 1e-3
+  - CITE, PUBMED, CORAFULL: 1e-5
 
 
 
