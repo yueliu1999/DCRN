@@ -66,8 +66,6 @@ Python package information is summarized in **requirements.txt**:
   python main.py --name dblp --seed 3 --alpha_value 0.2 --lambda_value 10 --gamma_value 1e3 --lr 1e-4
   ```
 
-
-
 parameter setting
 
 - name: the name of dataset
@@ -84,6 +82,10 @@ parameter setting
   - ACM: 5e-5
   - AMAP: 1e-3
   - CITE, PUBMED, CORAFULL: 1e-5
+
+
+
+tips: Limited by the GPU memory, PUBMED and CORAFULL might be out of memory during training. Please use the batch training version of DCRN [here](https://drive.google.com/file/d/185GLObsQQL3Y-dQ2aIin5YrXuA-dgpnU/view?usp=sharing).
 
 
 
