@@ -104,7 +104,7 @@ tips: Limited by the GPU memory, PUBMED and CORAFULL might be out of memory duri
 
 ### Citation
 
-If you use this code for your research, please cite our paper.
+If you use code or datasets in this repository for your research, please cite our paper.
 
 ```
 @inproceedings{
