@@ -107,7 +107,11 @@ tips: Limited by the GPU memory, PUBMED and CORAFULL might be out of memory duri
 If you use code or datasets in this repository for your research, please cite our paper.
 
 ```
-@inproceedings{
+@inproceedings{DCRN,
+  title={Deep Graph Clustering via Dual Correlation Reduction},
+  author={Liu, Yue and Tu, Wenxuan and Zhou, Sihang and Liu, Xinwang and Song, Linxuan and Yang, Xihong and Zhu, En},
+  booktitle={AAAI Conference on Artificial Intelligence},
+  year={2022}
 }
 ```
 
