@@ -40,7 +40,7 @@ An official source code for paper [Deep Graph Clustering via Dual Correlation Re
 </div>
 
 
-### requirements
+### Requirements
 
 The proposed DCRN is implemented with python 3.8.5 on a NVIDIA 3090 GPU. 
 
@@ -56,17 +56,17 @@ Python package information is summarized in **requirements.txt**:
 
 ### Quick Start
 
-- step1: using **dblp.zip** or download other datasets from [Awesome Deep Graph Clustering](https://github.com/yueliu1999/Awesome-Deep-Graph-Clustering) 
+- Step1: using **dblp.zip** or download other datasets from [Awesome Deep Graph Clustering](https://github.com/yueliu1999/Awesome-Deep-Graph-Clustering) 
 
-- step2: unzip the dataset into **./dataset**
+- Step2: unzip the dataset into **./dataset**
 
-- step3: run 
+- Step3: run 
 
   ```
   python main.py --name dblp --seed 3 --alpha_value 0.2 --lambda_value 10 --gamma_value 1e3 --lr 1e-4
   ```
 
-parameter setting
+Parameter setting
 
 - name: the name of dataset
 - seed: the random seed. 10 runs under different random seeds.
@@ -85,7 +85,7 @@ parameter setting
 
 
 
-tips: Limited by the GPU memory, PUBMED and CORAFULL might be out of memory during training. Please use the batch training version of DCRN [here](https://drive.google.com/file/d/185GLObsQQL3Y-dQ2aIin5YrXuA-dgpnU/view?usp=sharing).
+Tips: Limited by the GPU memory, PUBMED and CORAFULL might be out of memory during training. Thus, we adpot batch training on PUBMED and CORAFULL dataseets and the batch size is set to 2000. Please use the batch training version of DCRN [here](https://drive.google.com/file/d/185GLObsQQL3Y-dQ2aIin5YrXuA-dgpnU/view?usp=sharing).
 
 
 
