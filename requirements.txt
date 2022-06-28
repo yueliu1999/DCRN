@@ -1,6 +1,6 @@
 torch==1.8.0
 tqdm==4.50.2
-numpy==1.19.2
+numpy==1.22.0
 munkres==1.1.4
 scikit_learn==1.0.1
 
