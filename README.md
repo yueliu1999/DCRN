@@ -110,7 +110,10 @@ If you use code or datasets in this repository for your research, please cite ou
 @inproceedings{DCRN,
   title={Deep Graph Clustering via Dual Correlation Reduction},
   author={Liu, Yue and Tu, Wenxuan and Zhou, Sihang and Liu, Xinwang and Song, Linxuan and Yang, Xihong and Zhu, En},
-  booktitle={AAAI Conference on Artificial Intelligence},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={36},
+  number={7},
+  pages={7603-7611},
   year={2022}
 }
 ```
