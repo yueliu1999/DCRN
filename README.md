@@ -116,6 +116,13 @@ If you use code or datasets in this repository for your research, please cite ou
   pages={7603-7611},
   year={2022}
 }
+
+@article{Deep_graph_clustering_survey,
+ author = {Liu, Yue and Xia, Jun and Zhou, Sihang and Wang, Siwei and Guo, Xifeng and Yang, Xihong and Liang, Ke and Tu, Wenxuan and Li, Z. Stan and Liu, Xinwang},
+ journal = {arXiv preprint arXiv:2211.12875},
+ title = {A Survey of Deep Graph Clustering: Taxonomy, Challenge, and Application},
+ year = {2022}
+}
 ```
 
 
