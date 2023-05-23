@@ -55,8 +55,8 @@ Python package information is summarized in **requirements.txt**:
 ### Pre-training
 We release the pre-training code.
 
-- Google Drive: https://drive.google.com/file/d/1XRlu3Ahgwin52jluqFu2aBW6wjCwjY4M/view?usp=sharing
-- Nut store: https://www.jianguoyun.com/p/DXCOQEYQwdaSChiEjrsEIAA
+- Google Drive: [Link](https://drive.google.com/file/d/1XRlu3Ahgwin52jluqFu2aBW6wjCwjY4M/view?usp=sharing)
+- Nut store: [Link](https://www.jianguoyun.com/p/DXCOQEYQwdaSChiEjrsEIAA)
 
 ### Quick Start
 
